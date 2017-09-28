@@ -8,17 +8,14 @@ int main()
     printf("Skriv inn alder på 10 studenter.\n");
     printf("Trykk enter mellom hver gang.\n");
     int alder[10];
-    for(int i = 0; i<10; i++) {
+    for(int i = 0; i<10; i++)
         scanf("%d", &alder[i]);
-    }
     printf("Alderen på studentene du skrev inn var:\n");
-    for(int i = 0; i<10; i++) {
+    for(int i = 0; i<10; i++)
         printf("%d: %d\n", i+1, alder[i]);
-    }
     int sum_alder = 0;
-    for(int i = 0; i<10; i++) {
+    for(int i = 0; i<10; i++)
         sum_alder += alder[i];
-    }
     double snittalder = sum_alder/10.0;
     printf("\nGjennomsnittsalderen er: %.2f\n", snittalder);
 
@@ -43,9 +40,8 @@ int main()
                 printf("%d: %d\n", i+1, alder[i]);
             }
             sum_alder = 0;
-            for(int i = 0; i<10; i++) {
+            for(int i = 0; i<10; i++)
                 sum_alder += alder[i];
-            }
             snittalder = sum_alder/10.0;
             printf("\nGjennomsnittsalderen er: %.2f\n", snittalder);
         }
