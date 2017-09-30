@@ -22,7 +22,7 @@ int main()
 
     char valg = 0;
     while(1) {
-        printf("Ønsker du å skrive inn ny alder på en student?\n");
+        printf("Ønsker du å korrigere alder på en student?\n");
         printf("Velg studentnummer eller skriv 'n' for å avslutte.\n");
         getchar(); // Be om forklaring på dette, skjønner ikke hvorfor det er nødvendig.
         scanf("%c", &valg);
@@ -30,11 +30,11 @@ int main()
             break;
         if(valg>48 && valg<58) {
             printf("Skriv inn ny alder: ");
-            scanf("%d", &alder[(int)valg]);
+            scanf("%d", &alder[(int)valg-49]);
             printf("Alderen på studentene du skrev inn var:\n");
             for(int i = 0; i<10; i++) {
-                if(i==(int)valg) {
-                    printf("* %d: %d\n *", i+1, alder[i]);
+                if(i==(int)valg-49) {
+                    printf("%d: %d (korrigert)\n", i+1, alder[i]);
                     continue;
                 }
                 printf("%d: %d\n", i+1, alder[i]);
