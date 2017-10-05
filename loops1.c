@@ -30,10 +30,10 @@ int main()
             break;
         if (valg>'1' && valg<'9') {
             printf("Skriv inn ny alder: ");
-            scanf("%d", &alder[(int)valg-49]);
+            scanf("%d", &alder[(int)valg-'0']);
             printf("Alderen på studentene du skrev inn var:\n");
             for (int i = 0; i<10; i++) {
-                if (i==(int)valg-49) {
+                if (i==(int)valg-'0') {
                     printf("%d: %d (korrigert)\n", i+1, alder[i]);
                     continue;
                 }
