@@ -15,7 +15,7 @@ int main()
     float friksjon = fore();
     int kmt = hastighet_kmt();
     float mps = kmt2mps(kmt);
-    printf("Koeffisienten til friksjonen mot underlaget er %3.2f.\n", friksjon);
+    printf("Friksjonskoeffisienten mot underlaget er %3.2f.\n", friksjon);
     printf("Hastigheten er %d kmt eller %.1f m/s.\n", kmt, mps);
     printf("Bremselengden blir %3.2f m.\n", bremselengde(mps,friksjon));
     return 0;
@@ -52,6 +52,7 @@ float fore(void)
 }
 
 void clearscr(void)
+// setter inn 50 blanke linjer slik at det ser ut som skjermen er tom
 {
     for (int i = 0; i<50; ++i)
         printf("\n");
@@ -66,12 +67,14 @@ int hastighet_kmt(void)
 }
 
 float kmt2mps(int kmt)
+// konverterer hastighet fra kmt til m/s
 {
-    float mps = kmt/3.6;
+    float mps = kmt/3.6; // 3.6 er konversjonsfaktoren fra kmt til m/s
     return mps;
 }
 
 float power(float base, int exp)
+// regner ut x^y der x er basen og y eksponenten
 {
     int sum;
     for (sum = 0; exp>0; --exp)
@@ -80,7 +83,10 @@ float power(float base, int exp)
 }
 
 float bremselengde(float mps, float fore)
+// regner ut bremselengden
 {
+    // l = v^2/(2*µ*g) der v er hastighet i m/s, µ er friksjonskoeffisienten
+    // og g gravitasjonskonstanten.
     float bremselengde = power(mps,2)/(2*fore*GRAVITASJON);
     return bremselengde;
 }
