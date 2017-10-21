@@ -2,23 +2,24 @@
 // Enkel kalkulator for å konvertere C til F eller K.
 #include <stdio.h>
 
-enum { MAXLINE = 5 };
+const MAXLINE = 5;
 
 int getline2(char line[], int maxline);
 int string_to_int(char temp[]);
 
 int main()
 {
-    printf("Tast inn temperatur i grader Celsius: ");
+    char valg[MAXLINE] = { 0 };
     char temp[MAXLINE] = { 0 };
+    int len_valg = getline2(valg, MAXLINE);
+    int celsius = string_to_int(temp);
+
+    printf("Tast inn temperatur i grader Celsius: ");
     getline2(temp, MAXLINE);
     printf("Skal denne temperaturen konverteres til F eller K?\n");
-    char valg[MAXLINE] = { 0 };
-    int len_valg = getline2(valg, MAXLINE);
     while (valg[0]!='F' && valg[0]!='f' && valg[0]!='K' && valg[0]!='k')
         ;
 
-    int celsius = string_to_int(temp);
     if (valg[0]=='F' || valg[0]=='f') {
         int fahren = 32 + celsius*(9/5);
         printf("\n%d C tilsvarer %d F.\n", celsius, fahren);
@@ -38,7 +39,6 @@ int getline2(char s[], int lim)
         s[i] = c;
     s[i] = '\0';
     return i+1;
-
 }
 
 int string_to_int(char s[])
