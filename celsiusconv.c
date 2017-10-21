@@ -9,16 +9,16 @@ int string_to_int(char temp[]);
 
 int main()
 {
-    char valg[MAXLINE] = { 0 };
+    printf("Tast inn temperatur i grader Celsius: ");
     char temp[MAXLINE] = { 0 };
-    int len_valg = getline2(valg, MAXLINE);
+    getline2(temp, MAXLINE);
     int celsius = string_to_int(temp);
 
-    printf("Tast inn temperatur i grader Celsius: ");
-    getline2(temp, MAXLINE);
     printf("Skal denne temperaturen konverteres til F eller K?\n");
-    while (valg[0]!='F' && valg[0]!='f' && valg[0]!='K' && valg[0]!='k')
-        ;
+    char valg[MAXLINE] = { 0 };
+    int len_valg = getline2(valg, MAXLINE);
+    while (valg[0]!='F' && valg[0]!='f' && valg[0]!='K' && valg[0]!='k') {
+        }
 
     if (valg[0]=='F' || valg[0]=='f') {
         int fahren = 32 + celsius*(9/5);
@@ -31,7 +31,7 @@ int main()
     return 0;
 }
 
-// getline: les inn en linje i s
+// getline: les inn en linje i s, returnerer lengden på stringen
 int getline2(char s[], int lim)
 {
     int i, c;
