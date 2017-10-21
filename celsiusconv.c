@@ -2,7 +2,7 @@
 // Enkel kalkulator for å konvertere C til F eller K.
 #include <stdio.h>
 
-const MAXLINE = 5;
+enum { MAXLINE = 5 };
 
 int getline2(char line[], int maxline);
 int string_to_int(char temp[]);
