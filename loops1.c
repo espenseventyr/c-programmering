@@ -24,7 +24,7 @@ int main()
     while (1) {
         printf("Ønsker du å korrigere alder på en student?\n");
         printf("Velg studentnummer eller skriv 'n' for å avslutte.\n");
-        getchar(); // Be om forklaring på dette, skjønner ikke hvorfor det er nødvendig.
+        getchar(); // Be om forklaring på dette, skjønner ikke hvorfor denne linjen er nødvendig.
         scanf("%c", &valg);
         if (valg=='n' || valg=='N')
             break;
